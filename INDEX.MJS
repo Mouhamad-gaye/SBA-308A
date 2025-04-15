@@ -4,9 +4,11 @@
 
 const navLinks = document.querySelectorAll('a')
 navLinks.forEach((link) => {
-  link.addEventListener('click', (getdata));
+  link.addEventListener('click', (event) => {;
+    event.preventDefault()
   linktarget = link.getAttribute('href')
   getdata(linktarget)
+})
 });
 
 
@@ -14,7 +16,7 @@ async function getdata(linktarget) {
   let url;
 
   switch (linktarget) {
-    case "Season":
+    case "#season":
       url = "https://www.thesportsdb.com/api/v1/json/3/search_all_seasons.php?id";
       break;
     case "#league":
@@ -49,8 +51,8 @@ try {
   console.error('NOT FETCHING DATA', error)
 }
 
-
 }
+
 
 
 
