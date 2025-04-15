@@ -1,10 +1,6 @@
 
 // import axios from 'axios'
-// const apiKey = '8166c9d240mshe23a0f396e9cd4dp1c9fc3jsncbb8b0610a1e'
-
-// x-rapidapi-key
-
-
+// const apiKey = P3chEJgaZw90L2oAgKUjfyBI75NEpEOUmIHJ7he4xLTS5k128ZgBM9rFW14a
 
 const navLinks = document.querySelectorAll('a')
 navLinks.forEach((link) => {
@@ -12,44 +8,52 @@ navLinks.forEach((link) => {
   linktarget = link.getAttribute('href')
   getdata(linktarget)
 });
-async function getdata(links) {
-  let url = links
 
-  switch (links) {
-    case "season":
-      url = "https://api-football-v1.p.rapidapi.com/v2/seasons";
+
+async function getdata(linktarget) {
+  let url;
+
+  switch (linktarget) {
+    case "Season":
+      url = "https://www.thesportsdb.com/api/v1/json/3/search_all_seasons.php?id";
       break;
-    case "league":
-      url = "https://api-football-v1.p.rapidapi.com/v2/leagues";
+    case "#league":
+      url = "https://www.thesportsdb.com/api/v1/json/3/all_leagues.php";
       break
-    case "players":
-      url = "https://api-football-v1.p.rapidapi.com/v2/players/seasons";
+    case "#players":
+      url = "https://www.thesportsdb.com/api/v1/json/3/lookup_all_players.php?id=133604";
       break
-    case "standings":
-      url = "https://api-football-v1.p.rapidapi.com/v2/leagueTable/{league_id}";
+    case "#standings":
+      url = "https://www.thesportsdb.com";
       break
-    case "stats":
-      url = "https://api-football-v1.p.rapidapi.com/v2/players/player/{player_id}/{season}";
+    case "#stats":
+      url = "https://www.thesportsdb.com";
     default: 
-      console.log('No links', links) 
-      break
+      console.error('Invalid href', linktarget);
+      return;
   }
-  try {
-    const response = await fetch(`https://api-football-v1.p.rapidapi.com`, {
-      method: 'GET',
-      headers: {"x-rapidapi-key": "1acc793d10msh96c1f4907c7ed8bp1c574cjsn4f0e889986d7"}
-    });
-    //check if response is successful
-    if(!response.ok) {
-        throw new Error('HTTP error! Status: ${response.status}')
-    }
-    const jsonData = await response.json();
-    console.log('Data for ${links}')
-  }catch (error){
-    console.error('NOT FETCHING DATA', error)
+
+try {
+  const response = await fetch(`https://www.thesportsdb.com/api/v1/json/3/search_all_teams.php?l=English%20Premier%20League`,{
+    method: 'GET'
+    // headers: {"Authorization": "P3chEJgaZw90L2oAgKUjfyBI75NEpEOUmIHJ7he4xLTS5k128ZgBM9rFW14a", }
+    
+  });
+  //check if response is successful
+  if(!response.ok) {
+      throw new Error('HTTP error! Status: ${response.status}')
   }
+  const jsonData = await response.json();
+  console.log('Data for Linktarget', jsonData);
+}catch (error){
+  console.error('NOT FETCHING DATA', error)
+}
+
 
 }
+
+
+
 
 
 
