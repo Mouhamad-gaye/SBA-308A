@@ -2,44 +2,56 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./INDEX.CSS" />
-    <script defer src="./INDEX.MJS"></script>
-    <script src="https://api-football-v1.p.rapidapi.com/v2/"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./INDEX.CSS" />
+  <script defer src="./INDEX.MJS"></script>
+  <script src="https://api-football-v1.p.rapidapi.com/v2/"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 </head>
 
 <body>
-    <header>
-      <h1>Soccer News</h1>
-      <p>Stay updated on the latest soccer stories!</p>
-    </header>
-    
-    <nav>
-      <a href="#season">Season</a>
-      <a href="#league">League</a>
-      <a href="#players">Players</a>
-      <a href="#standings">Standings</a>
-      <a href="#stats">Stats</a>
-    </nav>
-  
-    <main>
-      <article>
-        <h2>Big Match Highlights</h2>
-        <p>Team A faced Team B in an intense showdown yesterday, finishing with a thrilling 3-2 scoreline. The match saw spectacular goals and a dramatic last-minute penalty save.</p>
-      </article>
-  
-      <article>
-        <h2>Transfer Rumors</h2>
-        <p>Rumors suggest Player X could be moving to Club Y for a record-breaking fee this summer. Stay tuned for updates!</p>
-      </article>
-    </main>
-  
-  </body>
-  </html>
+  <header>
+    <h1>Soccer News</h1>
+    <p>Stay updated on the latest soccer stories!</p>
+  </header>
+
+  <nav>
+    <a href="season">Season</a>
+    <a href="league">League</a>
+    <a href="players">Players</a>
+    <a href="standings">Standings</a>
+    <a href="stats">Stats</a>
+  </nav>
+  <h1>Basic Search Feature</h1>
+  <input type="text" id="searchInput" placeholder="Search..." />
+  <button id="searchButton">Search</button>
+  <div id="output"></div>
+  <div>
+    <h2>Add Item</h2>
+    <input type="text" id="playerName" placeholder="Player Name">
+    <input type="text" id="playerPosition" placeholder="Player Position">
+    <button id="addItemButton">Add Item</button>
+  </div>
+  <main>
+    <article>
+      <h2>Big Match Highlights</h2>
+      <p>Team A faced Team B in an intense showdown yesterday, finishing with a thrilling 3-2 scoreline. The match saw
+        spectacular goals and a dramatic last-minute penalty save.</p>
+    </article>
+
+    <article>
+      <h2>Transfer Rumors</h2>
+      <p>Rumors suggest Player X could be moving to Club Y for a record-breaking fee this summer. Stay tuned for
+        updates!</p>
+    </article>
+  </main>
+
+</body>
+
+</html>
 
 
 
