@@ -14,8 +14,8 @@ navLinks.forEach((link) => {
 async function getdata(linktarget) {
   let url;
   switch (linktarget) {
-    case "season":
-      url = `https://www.thesportsdb.com/api/v1/json/3/search_all_seasons.php?id`;
+    case "events":
+      url = `https://www.thesportsdb.com//api/v1/json/3/searchevents.php?e=Arsenal_vs_Chelsea`;
       break;
     case "league":
       url = `https://www.thesportsdb.com/api/v1/json/3/all_leagues.php`;
@@ -32,6 +32,8 @@ async function getdata(linktarget) {
       console.error('Invalid href', linktarget);
       return;
   }
+  console.log('Fetching data from:', url);
+  getdata(url);
 
 
 try {
